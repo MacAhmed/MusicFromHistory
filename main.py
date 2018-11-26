@@ -5,7 +5,6 @@ import json
 
 
 def download_mp3(youtube_url):
-    
     os.system("youtube-dl --extract-audio --audio-format mp3 " + youtube_url + ' -o "tracks/%(title)s.mp3"')
 
 def isMusicVideo(youtube_url):
@@ -24,8 +23,7 @@ def isMusicVideo(youtube_url):
 
 
 def main():
-    output = 'youtube-data-4.csv'
-    parsehistory.readHistory_getURLs('History', output)
+    parsehistory.readHistory_getURLs(sys.argv[1], 'history_cleaned')
     if not os.path.exists("tracks"): os.makedirs('tracks')
 
     with open(output) as csv_file:
@@ -36,7 +34,7 @@ def main():
             if( isMusicVideo(row[0]) ):
                 download_mp3(row[0])
 
-    # TODO : Add history functionality, not download songs already downloaded
-    # TODO : Rename songs correctly and mp3 info updated
+    os.remove('history_cleaned')
+
 
 main()
