@@ -21,3 +21,5 @@ def readHistory_getURLs(path, output):
     with open(output, 'w') as myfile:
         for x in result_list:
             myfile.write(x + "\n")
+    
+    return myfile
