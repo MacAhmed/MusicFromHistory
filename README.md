@@ -19,6 +19,5 @@ Then simply run `python3 main.py [path_to_history]`
 The program will create a file to store all the URLs that may be music, and then download all music in a `tracks` folder. At termination, the URLs file will be deleted. 
 
 ## To Do
-- Add history functionality, not download songs already downloaded
 - Rename songs correctly, add cover art, and other info etc.
 - Convert to a Spotify Playlist
