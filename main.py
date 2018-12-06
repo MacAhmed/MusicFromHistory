@@ -6,7 +6,10 @@ import datetime
 
 
 def download_mp3(youtube_url):
-    os.system("youtube-dl --extract-audio --audio-format mp3 " + youtube_url + ' -o "tracks/%(title)s.mp3"')
+    if( not db.haveDownloaded('videos.db', youtube_url) ):
+        os.system("youtube-dl --extract-audio --audio-format mp3 " + youtube_url + ' -o "tracks/%(title)s.mp3"')
+    else:
+        print("Not Downloading as already Downloaded once!")
 
 def isMusicVideo(youtube_url):
     now = datetime.datetime.now()
