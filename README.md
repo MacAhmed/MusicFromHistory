@@ -21,3 +21,4 @@ The program will create a file to store all the URLs that may be music, and then
 ## To Do
 - Add history functionality, not download songs already downloaded
 - Rename songs correctly, add cover art, and other info etc.
+- Convert to a Spotify Playlist
